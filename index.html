@@ -197,13 +197,23 @@
             more = document.getElementById('more');
         more.style.display = 'none';
         showMore.style.display = 'block';
-        showMore.addEventListener("click", function(e) {
-            e.stopPropagation();
-            e.preventDefault();
+        function showAllLinks(e) {
+            var evt = e || window.event;
+            if (evt.preventDefault){
+              evt.preventDefault();
+            } else {
+              evt.returnValue = false;
+              evt.cancelBubble = true;
+            }
             more.style.display = 'block';
             showMore.style.display = 'none';
             return false;
-        });
+        }
+        if (showMore.addEventListener){
+          showMore.addEventListener('click', showAllLinks, false);
+        } else if (showMore.attachEvent){
+          showMore.attachEvent('onclick', showAllLinks);
+        }
     };
     </script>
 
