@@ -49,9 +49,11 @@
     Civicist - 8th April 2016
     </li>
 
-    <a href='#' id="showmore">show more</a>
+    <li>
+    <a href='#' id="showmore">show more...</a>
+    </li>
 
-    <span class="more">
+    <span id="more">
 
     <li>
     <a href="http://www.insidephilanthropy.com/home/2016/3/24/how-can-funders-know-who-to-trust-when-it-comes-to-tech-advi.html">How Can Funders Know Who To Trust When It Comes to Tech Advice?</a><br/>
@@ -136,7 +138,19 @@
     </div>
 
     <script type="text/javascript">
-
+    window.onload = function(){
+        var showMore = document.getElementById('showmore'),
+            more = document.getElementById('more');
+        more.style.display = 'none';
+        showMore.style.display = 'block';
+        showMore.addEventListener("click", function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            more.style.display = 'block';
+            showMore.style.display = 'none';
+            return false;
+        });
+    };
     </script>
 
 </body>
