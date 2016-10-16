@@ -1,0 +1,42 @@
+body {
+    font-style: normal;
+    font-weight: 400;
+    font-family: "mrs-eaves", Garamond, "Times New Roman", serif;
+    color: #171717;
+    background-color: #f5f5f5;
+    padding: 2em;
+}
+.content {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    min-width: 350px;
+}
+h1 {
+    font-size: 5em;
+}
+.more {
+    display: none;
+}
+h2 {
+    font-size: 3em;
+    margin-top: 2em;
+}
+h2#writing {
+    margin-top: 1em;
+}
+p {
+    font-size: 2em;
+}
+ul {
+    font-size: 2em;
+    list-style-type: none;
+    padding: 0;
+    -webkit-padding-start: 0;
+}
+ul.writing li {
+    margin-bottom: 1em;
+}
+img {
+    border: 2px solid #ccc;
+}
