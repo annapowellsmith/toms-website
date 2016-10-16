@@ -55,8 +55,11 @@
         padding: 0;
         -webkit-padding-start: 0;
     }
-    ul.writing li {
+    #postlist li {
         margin-bottom: 1em;
+    }
+    #postlist.brief li:nth-child(n+6) {
+        display:none;
     }
     ul.social li {
         margin-bottom: 1em;
@@ -79,7 +82,7 @@
     <main role="main">
     <h2 id="writing">Writing</h2>
 
-    <ul class="writing">
+    <ul id="postlist">
 
     <li>
     <a href="http://civichall.org/civicist/debating-cass-sunstein-on-transparency/">Debating Cass Sunstein on Transparency</a><br/>
@@ -105,12 +108,6 @@
     <a href="http://civichall.org/civicist/rise-of-the-internet-mitigators/">The Rise of the Internet ‘Mitigators’</a><br/>
     Civicist - May 2016
     </li>
-
-    <li>
-    <a href='#' id="showmore">show more...</a>
-    </li>
-
-    <span id="more">
 
     <li>
     <a href="http://civichall.org/civicist/paying-your-own-way/">Paying Your Own Way (or Not)</a><br/>
@@ -161,9 +158,9 @@
     <a href="http://steiny.typepad.com/">My old blog - obsolete since 2014</a>
     </li>
 
-    </span>
-
     </ul>
+
+    <p><a href='#' id="showmore">show more...</a></p>
 
     <h2>About</h2>
 
@@ -175,11 +172,11 @@
 
     <p>I’m a writer on a range of issues relating to power, technology and government.</p>
 
-    <p>I'm currently Digital Transformation Lead at the <a href="http://biglotteryfund.org.uk">Big Lottery Fund</a>.</p>
+    <p>I'm currently Digital Transformation Lead at the <a href="https://biglotteryfund.org.uk/">Big&nbsp;Lottery&nbsp;Fund</a>.</p>
 
     <p>I’m a student of economic and technological history.</p>
 
-    <p>I'm motivated by, and interested in various issues - <a href="https://medium.com/@TomSteinberg/problems-that-motivate-me-c31571696563">here’s a list</a>.</p>
+    <p>I'm motivated by, and interested in various issues - <a href="https://medium.com/@TomSteinberg/problems-that-motivate-me-c31571696563">here’s&nbsp;a&nbsp;list</a>.</p>
 
     <p>I’m a husband, son, brother and cat owner.</p>
 
@@ -206,8 +203,8 @@
     <script type="text/javascript">
     window.onload = function(){
         var showMore = document.getElementById('showmore'),
-            more = document.getElementById('more');
-        more.style.display = 'none';
+            postList = document.getElementById('postlist');
+        postList.className = postList.className.concat(" brief");
         showMore.style.display = 'block';
         function showAllLinks(e) {
             var evt = e || window.event;
@@ -217,7 +214,7 @@
               evt.returnValue = false;
               evt.cancelBubble = true;
             }
-            more.style.display = 'block';
+            postList.className = '';
             showMore.style.display = 'none';
             return false;
         }
